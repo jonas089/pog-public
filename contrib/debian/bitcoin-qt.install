@@ -1,0 +1,6 @@
+usr/local/bin/proofofgaming-qt usr/bin
+share/pixmaps/proofofgaming32.xpm usr/share/pixmaps
+share/pixmaps/proofofgaming16.xpm usr/share/pixmaps
+share/pixmaps/proofofgaming128.png usr/share/pixmaps
+debian/proofofgaming-qt.desktop usr/share/applications
+debian/proofofgaming-qt.protocol usr/share/kde4/services/

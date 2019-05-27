@@ -1,0 +1,81 @@
+policy_module(proofofgaming, 1.100.1)
+
+########################################
+#
+# Declarations
+#
+
+type proofofgaming_t;
+type proofofgaming_exec_t;
+init_daemon_domain(proofofgaming_t, proofofgaming_exec_t)
+
+permissive proofofgaming_t;
+
+type proofofgaming_initrc_exec_t;
+init_script_file(proofofgaming_initrc_exec_t)
+
+type proofofgaming_conf_t;
+files_type(proofofgaming_conf_t)
+
+type proofofgaming_var_lib_t;
+files_type(proofofgaming_var_lib_t)
+
+type proofofgaming_var_run_t;
+files_type(proofofgaming_var_run_t)
+
+type proofofgaming_port_t;
+corenet_port(proofofgaming_port_t)
+
+########################################
+#
+# proofofgaming local policy
+#
+allow proofofgaming_t self:process { fork };
+
+allow proofofgaming_t self:fifo_file rw_fifo_file_perms;
+allow proofofgaming_t self:unix_stream_socket create_stream_socket_perms;
+
+manage_dirs_pattern(proofofgaming_t, proofofgaming_conf_t, proofofgaming_conf_t)
+manage_files_pattern(proofofgaming_t, proofofgaming_conf_t, proofofgaming_conf_t)
+
+manage_dirs_pattern(proofofgaming_t, proofofgaming_var_lib_t, proofofgaming_var_lib_t)
+manage_files_pattern(proofofgaming_t, proofofgaming_var_lib_t, proofofgaming_var_lib_t)
+files_var_lib_filetrans(proofofgaming_t, proofofgaming_var_lib_t, { dir file })
+
+manage_dirs_pattern(proofofgaming_t, proofofgaming_var_run_t, proofofgaming_var_run_t)
+manage_files_pattern(proofofgaming_t, proofofgaming_var_run_t, proofofgaming_var_run_t)
+
+sysnet_dns_name_resolve(proofofgaming_t)
+corenet_all_recvfrom_unlabeled(proofofgaming_t)
+
+allow proofofgaming_t self:tcp_socket create_stream_socket_perms;
+corenet_tcp_sendrecv_generic_if(proofofgaming_t)
+corenet_tcp_sendrecv_generic_node(proofofgaming_t)
+corenet_tcp_sendrecv_all_ports(proofofgaming_t)
+corenet_tcp_bind_generic_node(proofofgaming_t)
+
+gen_require(`
+    type proofofgaming_port_t;
+')
+allow proofofgaming_t proofofgaming_port_t:tcp_socket name_bind;
+
+gen_require(`
+    type proofofgaming_port_t;
+')
+allow proofofgaming_t proofofgaming_port_t:tcp_socket name_connect;
+
+domain_use_interactive_fds(proofofgaming_t)
+
+files_read_etc_files(proofofgaming_t)
+
+miscfiles_read_localization(proofofgaming_t)
+
+sysnet_dns_name_resolve(proofofgaming_t)
+
+allow proofofgaming_t proofofgaming_exec_t:file execute_no_trans;
+allow proofofgaming_t self:process setsched;
+corecmd_exec_ls(proofofgaming_t)
+corenet_tcp_connect_http_port(proofofgaming_t)
+dev_read_urand(proofofgaming_t)
+fs_getattr_xattr_fs(proofofgaming_t)
+kernel_read_system_state(proofofgaming_t)

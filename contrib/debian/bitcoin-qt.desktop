@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=ProofOfGaming Core
+Comment=Connect to the ProofOfGaming P2P Network
+Comment[de]=Verbinde mit dem ProofOfGaming peer-to-peer Netzwerk
+Comment[fr]=ProofOfGaming, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=ProofOfGaming, eşten eşe kriptografik sanal para birimi
+Exec=proofofgaming-qt %u
+Terminal=false
+Type=Application
+Icon=proofofgaming128
+MimeType=x-scheme-handler/proofofgaming;
+Categories=Office;Finance;

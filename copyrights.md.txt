@@ -1,0 +1,15 @@
+Copyright @ Bitcoin - Core developer(s)
+Copyright @ Dash developer(s)
+Copyright @ Ravencoin developer(s)
+Copyright @ Pigeoncoin developer(s)
+Copyright @ Proof-of-Gaming developer(s)
+
+This project is a hardfork of the "Pigeoncoin" source code.
+"Pigeoncoin" invented the x16s algorithm based on the "Ravencoin" source code,
+which invented the x16r algorithm.
+
+Every "altcoin" including this one is open source and has is own unique blockchain.
+
+
+The reason for publishing this source code is, to secure the network by offering people the
+possibility to setup nodes, run servers, compile wallets for other distributions etc.

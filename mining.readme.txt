@@ -1,0 +1,27 @@
+#######################Proof of Gaming#######################
+
+This file is meant to explain how mining takes place
+in "POG". This project is in first case
+developed for mobile usage.
+
+There are NO MINING REWARDS.
+
+Every block contains exactly 0 coins except for the premine.
+
+Coins will be earned by playing a mobile game / 
+using the mobile application in the future.
+
+Total supply is est. 4 Billion.
+
+3.5 Billion for game - rewards in total.
+
+0.5 Billion for ICO.
+
+Why ICO?
+
+- server payments
+- developer
+- future (game)-development costs
+- maybe upcoming fees
+
+#######################Proof of Gaming#######################

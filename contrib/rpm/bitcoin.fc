@@ -1,0 +1,8 @@
+/usr/bin/proofofgaming-cli		--	gen_context(system_u:object_r:proofofgaming_exec_t,s0)
+/usr/sbin/proofofgamingd		--	gen_context(system_u:object_r:proofofgaming_exec_t,s0)
+/usr/lib(64)?/proofofgaming/proofofgamingd		--	gen_context(system_u:object_r:proofofgaming_exec_t,s0)
+
+/etc/proofofgaming(/.*)?		gen_context(system_u:object_r:proofofgaming_conf_t,s0)
+/var/lib/proofofgaming(/.*)?		gen_context(system_u:object_r:proofofgaming_var_lib_t,s0)
+
+(/var)?/run/proofofgamingd(/.*)?   gen_context(system_u:object_r:proofofgaming_var_run_t,s0)

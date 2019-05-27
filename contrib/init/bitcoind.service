@@ -1,0 +1,22 @@
+[Unit]
+Description=ProofOfGaming's distributed currency daemon
+After=network.target
+
+[Service]
+User=proofofgaming
+Group=proofofgaming
+
+Type=forking
+PIDFile=/var/lib/proofofgamingd/proofofgamingd.pid
+ExecStart=/usr/bin/proofofgamingd -daemon -pid=/var/lib/proofofgamingd/proofofgamingd.pid \
+-conf=/etc/proofofgaming/proofofgaming.conf -datadir=/var/lib/proofofgamingd -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

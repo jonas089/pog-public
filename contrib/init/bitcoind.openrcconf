@@ -1,0 +1,33 @@
+# /etc/conf.d/proofofgamingd: config file for /etc/init.d/proofofgamingd
+
+# Config file location
+#PIGEOND_CONFIGFILE="/etc/proofofgaming/proofofgaming.conf"
+
+# What directory to write pidfile to?  (created and owned by $PIGEOND_USER)
+#PIGEOND_PIDDIR="/var/run/proofofgamingd"
+
+# What filename to give the pidfile
+#PIGEOND_PIDFILE="${PIGEOND_PIDDIR}/proofofgamingd.pid"
+
+# Where to write proofofgamingd data (be mindful that the blockchain is large)
+#PIGEOND_DATADIR="/var/lib/proofofgamingd"
+
+# User and group to own proofofgamingd process
+#PIGEOND_USER="proofofgaming"
+#PIGEOND_GROUP="proofofgaming"
+
+# Path to proofofgamingd executable
+#PIGEOND_BIN="/usr/bin/proofofgamingd"
+
+# Nice value to run proofofgamingd under
+#PIGEOND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#PIGEOND_OPTS=""
+
+# The timeout in seconds OpenRC will wait for proofofgamingd to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+PIGEOND_SIGTERM_TIMEOUT=60
